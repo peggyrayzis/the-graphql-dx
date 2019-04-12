@@ -203,19 +203,18 @@ export default LayoutTop;
 
 ---
 
-export default Horizontal;
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '40px',
-  }}
->
-  <img src="./img/prettier.png" />
-  <h3>Nonobtrusive, out of the way</h3>
-</div>
+<Horizontal>
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '40px',
+    }}
+  >
+    <img src="./img/prettier.png" />
+    <h3>Nonobtrusive, out of the way</h3>
+  </div>
 
 <div
   style={{
@@ -229,17 +228,18 @@ export default Horizontal;
   <h3>Predictable and intuitive</h3>
 </div>
 
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '40px',
-  }}
->
-  <img src="./img/vscodelogo.png" />
-  <h3>Instant feedback loop</h3>
-</div>
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '40px',
+    }}
+  >
+    <img src="./img/vscodelogo.png" />
+    <h3>Instant feedback loop</h3>
+  </div>
+</Horizontal>
 
 <Notes>
   a lot of you also mentioned specific tools that fit these principles. remember
@@ -248,15 +248,10 @@ export default Horizontal;
   it's never something you think about anymore
   <br />
   <br />i also think react does a nice job of being predictable -- your ui is a
-  function of your props plus state. it's immutable so it's consistent. i also
-  think the vue community does a really nice job with this one too
-  <br />
-  <br />
-  finally, we have vscode and typescript, which are amazing together giving you instant
-  feedback about the code you're writing.
-  <br />
-  <br />i think another thing these tools all have in common is that they filled
-  a void in developer's lives
+  function of your props plus state. finally, we have vscode and typescript,
+  which are amazing together giving you instant feedback about the code you're
+  writing. i think another thing these tools all have in common is that they
+  filled a void in developer's lives
 </Notes>
 
 ---
