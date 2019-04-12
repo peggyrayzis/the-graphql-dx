@@ -4,10 +4,15 @@
   "version": "1.0.0",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx",
-    "help": "mdx-deck"
+    "help": "mdx-deck",
+    "clean": "rm -rf dist",
+    "static": "mkdir -p dist/img && cp -R img dist",
+    "build": "npm run clean && npm run static && mdx-deck build deck.mdx"
   },
   "devDependencies": {
     "mdx-deck": "^2.0.6"
+  },
+  "dependencies": {
+    "styled-system": "^4.1.0"
   }
 }
