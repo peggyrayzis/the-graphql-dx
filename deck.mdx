@@ -21,25 +21,36 @@ export { theme } from './theme';
       <br />
       developer experience
     </h1>
-    <h2>React Amsterdam 2019</h2>
+    <h2>Apollo Day NYC 2019</h2>
   </AlignLeft>
 </FullScreenBackground>
 
 ---
 
-<FullScreenBackground src="./img/peggy.jpg">
+<FullScreenBackground src="./img/pizza.png" />
+
+---
+
+<FullScreenBackground src="./img/background.svg">
   <div
     style={{
       display: 'flex',
-      flexDirection: 'column',
-      height: '80%',
-      justifyContent: 'flex-end',
+      flexDirection: 'row',
+      height: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
     }}
   >
-    <h1 style={{ margin: '10px', color: colors.white }}>@peggyrayzis</h1>
-    <h2 style={{ margin: '10px', color: colors.white }}>
-      Engineering Manager, Apollo
-    </h2>
+    <img
+      src="./img/peggy.jpg"
+      style={{ width: '300px', height: '300px', borderRadius: '50%' }}
+    />
+    <div style={{ margin: '0 0 0 30px' }}>
+      <h1 style={{ margin: '10px', color: colors.white }}>@peggyrayzis</h1>
+      <h2 style={{ margin: '10px', color: colors.white }}>
+        Developer Experience
+      </h2>
+    </div>
   </div>
 </FullScreenBackground>
 
@@ -52,11 +63,10 @@ export default WhiteBackground;
 <Emily />
 
 <Notes>
-  even if you haven't worked with graphql before, you don't need prior knowledge
-  of it to get anything out of my talk
+  when people ask you what is graphql, what do you say?
   <br />
   <br />
-  the most important thing to remember is that graphql is a way to communicate between
+  probably the most common response is that graphql is a way to communicate between
   a client and an api. often times that api is a graphql server, but it doesn't have
   to be. it can even be a local cache!
   <br />
@@ -68,22 +78,6 @@ export default WhiteBackground;
 
 ---
 
-export default PurpleBackground;
-
-<h2 style={{color: colors.lilac}}>This is not a typical GraphQL talk.</h2>
-
-<Notes>
-  i've seen a lot of graphql talks before, and now it's about that time where
-  someone will either compare it to rest or maybe go through some of the
-  technical benefits.
-  <br />
-  <br />
-  i'm not going to do that today because i want to take a different angle on graphql
-  that you might have not seen before. graphql is not about data over the wire.
-</Notes>
-
----
-
 # GraphQL is not about:
 
 - Smaller payloads
@@ -91,9 +85,10 @@ export default PurpleBackground;
 - Preventing overfetching
 
 <Notes>
-  it's not about smaller payloads, or fewer roundtrips, or preventing
-  overfetching. yes, these are technical benefits of graphql but to me, they're
-  not the most compelling reasons to adopt graphql
+  i'm going to take the semi controversial stance today that graphql is not
+  about data over the wire. it's not about smaller payloads, or fewer
+  roundtrips, or preventing overfetching. yes, these are technical benefits of
+  graphql but to me, they're not the most compelling reasons to adopt graphql
   <br />
   <br />
   instead, i think the best part about graphql is the massive productivity boost
@@ -116,13 +111,13 @@ export default SplitWhite;
   the reason why your team should adopt it.
   <br />
   <br />
-  maybe this is controversial, you're probably wondering why should we make a serious
-  technical decision based on DX? shouldn't we be optimizing for the user experience
-  instead?
+  you're probably wondering why should we make a serious technical decision based
+  on DX? shouldn't we be optimizing for the user experience instead?
   <br />
-  <br />i think developer happiness and productivity is so important because it helps
-  us ship products faster, it attracts the best engineers to our teams, and it helps
-  us to retain engineers once they join.
+  <br />i think it should be a balance. developer happiness and productivity are
+  so important because they help us ship products faster, they help us attract the
+  best engineers to our teams, and they helps us to retain engineers once they join.
+  ultimately good dx will help you build the best ux you can.
 </Notes>
 
 ---
@@ -148,57 +143,7 @@ so what does great developer experience look like?
   <br />
   <br />
   so what does it mean for a developer tool to spark joy? after all it is a little
-  subjective. even though i manage a DX team, i don't have all the answers so i took
-  it upon myself to do some research
-</Notes>
-
----
-
-<img src="./img/tweet.png" style={{ height: '700px', borderRadius: '8px' }} />
-
-<Notes>
-  i conducted a super scientific poll on twitter and added in some bribery for
-  good measure to get some responses
-  <br />
-  <br />i was super impressed by the quality of the responses! i read every one,
-  and it was really awesome to hear what good DX meant to you, so thanks if you
-  participated. there were a lot of common themes that came up:
-</Notes>
-
----
-
-export default LayoutTop;
-
-<TweetSlide title="Nonobtrusive, out of the way" start={1} end={2} />
-
-<Notes>
-  The most common by far was that tools shouldn't get in your way as your
-  developing. Ideally, they should be as nonobtrusive as possible so you can
-  focus on the code
-</Notes>
-
----
-
-export default LayoutTop;
-
-<TweetSlide title="Predictable and intuitive" start={3} end={4} />
-
-<Notes>
-  They also should be predictable, so given the same inputs you'll receive the
-  same output. The API should also be intuitive enough for you to fall into the
-  pit of success
-</Notes>
-
----
-
-export default LayoutTop;
-
-<TweetSlide title="Instant feedback loop" start={5} end={6} />
-
-<Notes>
-  And while we want our tools to get out of our way as much as possible, we also
-  want them to tell us immediately if there's a bug or an error. the closer the
-  feedback is to our editor, the better the experience will be
+  subjective.
 </Notes>
 
 ---
@@ -242,16 +187,18 @@ export default LayoutTop;
 </Horizontal>
 
 <Notes>
-  a lot of you also mentioned specific tools that fit these principles. remember
-  the first time you used prettier? it was amazing! all of a sudden i could
-  write some janky unindented code, hit save and it magically fixed it for me!
-  it's never something you think about anymore
+  before i gave a version of this talk at react amsterdam, i conducted a poll on
+  twitter and these were the most common themes that came up. a lot of you also
+  mentioned specific tools that fit these principles. remember the first time
+  you used prettier? it was amazing! all of a sudden i could write some janky
+  unindented code, hit save and it magically fixed it for me! it's never
+  something you think about anymore
   <br />
-  <br />i also think react does a nice job of being predictable -- your ui is a
-  function of your props plus state. finally, we have vscode and typescript,
-  which are amazing together giving you instant feedback about the code you're
-  writing. i think another thing these tools all have in common is that they
-  filled a void in developer's lives
+  <br />i also think react's component model does an excellent job of being
+  predictable -- your ui is a function of your props plus state. finally, we
+  have vscode and typescript, which are amazing together giving you instant
+  feedback about the code you're writing. i think another thing these tools all
+  have in common is that they filled a void in developer's lives
 </Notes>
 
 ---
@@ -323,8 +270,7 @@ export default Split;
   packages like normalizr, and selectors, and write a lot of code. same thing
   goes for context, that was designed to solve the problem of passing down props
   multiple levels. it's not a cache and when your provider unmounts, all of your
-  data disappears with it. it's also really easy to cause performance problems
-  if you don't enforce certain guidelines. what you really need is a cache.
+  data disappears with it. what you really need is a cache.
 </Notes>
 
 ---
@@ -408,6 +354,13 @@ export default WhiteBackground;
 <img src="./img/appstack.jpg" style={{ height: '90%' }} />
 
 <Emily />
+
+<Notes>
+  you can do this right now. you can do it incrementally. apollo brings this to
+  you in a lightweight frinction free way the product team can do it themselves
+  this is where you want your team to be. this is the big prize you get when
+  you're there
+</Notes>
 
 ---
 
